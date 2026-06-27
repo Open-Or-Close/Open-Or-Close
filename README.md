@@ -1,5 +1,5 @@
-## Hi there 👋
-
+## Hi Everyone 👋
+I am a curious Data scientist
 <!--
 **Open-Or-Close/Open-Or-Close** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
