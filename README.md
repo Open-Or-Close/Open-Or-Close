@@ -73,3 +73,6 @@
 <img data-importer="snake" src="https://raw.githubusercontent.com/Open-Or-Close/Open-Or-Close/snake-output/snake.svg" alt="Snake animation" />
 
 ###
+
+
+![img alt](https://github.com/Open-Or-Close/Open-Or-Close/blob/main/Image/result1.jpg?raw=true)
