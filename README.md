@@ -4,7 +4,7 @@
 
 ###
 
-<h2 data-importer="text" align="left">My Profile<br><br>A curious Data scientist. Love working with Machine learning</h2>
+<h2 data-importer="text" align="left">My Profile<br><br>A curious Data scientist. Love working with Machine learning algorithms (Supervised/Unsupervised/Semi-Supervised) and Deep Learning.</h2>
 
 ###
 
