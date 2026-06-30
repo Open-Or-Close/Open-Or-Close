@@ -3,18 +3,18 @@
 
 # 1. Executive Summary
 
-Cardiovascular disease is a major global health challenge, and early identification of patients at increased risk can support preventive healthcare strategies and clinical decision-making. This project applies a complete medical data science workflow to develop predictive machine learning models for heart disease classification using patient clinical information.
+Cardiovascular disease is a major global health challenge, and early identification of patients at increased risk can support preventive healthcare strategies and clinical decision-making. This project applies a complete medical data science workflow to develop predictive analytics models to analyse clinical risk factors, identify important patient characteristics, and support evidence-based cardiovascular risk assessment.
 
 The study analysed a structured healthcare dataset containing demographic, physiological, and diagnostic variables. The complete analytical workflow included:
 
-- Data quality assessment
-- Exploratory data analysis (EDA)
-- Statistical analysis (hypothesis test)
-- Feature preprocessing
-- Machine learning model development
-- Model validation
-- Hyperparameter optimisation
-- Feature importance analysis
+1. Clinical dataset assessment
+2. Data quality review and validation
+3. Exploratory analysis of patient characteristics
+4. Statistical evaluation of clinical variables
+5. Predictive model development
+6. Model performance assessment
+7. Feature importance and clinical interpretation
+8. Identification of limitations and validation requirements
 
 Two supervised machine learning approaches were developed and evaluated:
 
@@ -63,14 +63,15 @@ The dataset consisted of clinical records containing demographic, physiological,
 | Number of variables | 14 |
 | Target variable | Heart disease status |
 | Missing values | 0 |
-| Duplicate records | 723 |
+| Duplicate observations identified during quality assessment | 723
+  Duplicate observations removed before modelling to reduce risk of biased performance estimates.
 
 The dataset contained **14 variables**, including:
 
 - **13 input features (predictor variables)**
 - **1 target variable (heart disease outcome)**
-- ** Duplicates were identified and removed prior to model training to prevent data leakage and inflated performance estimates. **
-- 
+
+  
 The predictor variables represent patient characteristics and clinical measurements used to estimate the likelihood of heart disease.
 
 
@@ -87,7 +88,7 @@ A complete missing value assessment was performed.
 - No missing values were identified.
 - Therefore, no imputation strategy was required.
 
----
+
 
 ## Duplicate Detection
 
@@ -117,7 +118,7 @@ A stratified train-test split was applied to maintain consistent proportions of 
 
 <img width="975" height="517" alt="image" src="https://github.com/user-attachments/assets/43a161d9-bede-4a47-b578-9ef469983489" />
 
-Figure.1-Distribution of Cholesterol (Chol). It is skewed with outliers
+                        Figure.1-Distribution of Cholesterol (Chol). It is skewed with outliers
 
 
 ## Outlier Detection
@@ -154,7 +155,7 @@ Correlation analysis was conducted for numerical variables.
 
 <img width="975" height="531" alt="image" src="https://github.com/user-attachments/assets/d83415e1-5b7e-4fed-8957-76c6069483fa" />
 
-Figure.2-Correlation among the numerical variables 
+                            Figure.2-Correlation among the numerical variables 
 
 # 7. Statistical Analysis
 Statistical hypothesis testing was performed to evaluate relationships between clinical variables and heart disease outcomes.
@@ -336,3 +337,19 @@ Both Logistic Regression and Random Forest demonstrated the ability to predict h
 Future work should focus on external clinical validation, explainable AI methods, and integration into clinical decision-support systems.
 
 
+# 18. Tools and Technologies
+
+### Programming:
+Python, Pandas, NumPy, Scikit-learn
+
+### Statistical Analysis:
+Hypothesis Testing, Chi-square Test, T-test, Correlation Analysis
+
+### Machine Learning:
+Logistic Regression, Random Forest, Cross-validation, Hyperparameter Optimisation
+
+### Visualisation:
+Matplotlib, Seaborn
+
+### Documentation:
+GitHub, Markdown
