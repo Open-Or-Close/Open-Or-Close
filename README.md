@@ -4,7 +4,7 @@
 
 ###
 
-<h2 data-importer="text" align="left">My Profile<br><br>A curious Data scientist. Love working with Machine learning algorithms (Supervised/Unsupervised/Semi-Supervised) and Deep Learning.</h2>
+<h2 data-importer="text" align="left">My Profile<br><br>Data Scientist passionate about Machine Learning, Deep Learning, and healthcare analytics. Exploring predictive modelling, statistical analysis, and AI-driven solutions using supervised, unsupervised, and semi-supervised learning approaches..</h2>
 
 ###
 
