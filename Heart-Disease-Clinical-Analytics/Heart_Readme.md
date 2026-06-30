@@ -245,7 +245,7 @@ Logistic Regression was selected because it provides:
 -	Interpretability
 -	Probability-based predictions
 -	Clinical transparency
-This is valuable in healthcare where understanding decision factors is important.
+   This is valuable in healthcare where understanding decision factors is important.
 
 
 ### 9.2 Random Forest
@@ -279,6 +279,41 @@ The false negative rate was relatively low, which is important in healthcare bec
   <em>Figure.3-Confusion matrix for Logistic Regression.</em>
 </p>
 
+
+**True Positive (TP)**
+Patients who actually had heart disease and were correctly identified by Logistic Regression.
+These are successful detections.
+The model correctly recognised high-risk patients who may require:
+-	Further cardiac investigation 
+-	Preventive intervention 
+-	Clinical follow-up 
+A higher TP count contributes to higher sensitivity (recall).
+
+**True Negative (TN)**
+Patients without heart disease who were correctly classified as healthy.
+The model successfully avoided unnecessary concern or additional testing for low-risk patients.
+A good TN value indicates the model can distinguish healthy patients from diseased patients.
+
+**False Positive (FP)**
+Patients without heart disease who were incorrectly predicted as having disease.
+These patients may experience:
+-	Additional diagnostic testing 
+-	Increased healthcare costs 
+-	Possible anxiety 
+However, in cardiovascular screening, false positives are generally considered less harmful than false negatives because further investigation can confirm the diagnosis.
+
+**False Negative (FN)**
+Patients who had heart disease but were incorrectly predicted as healthy.
+This is the most clinically important error.
+A false negative may result in:
+-	Delayed diagnosis 
+-	Missed treatment opportunity 
+-	Increased cardiovascular risk 
+Therefore, reducing FN cases is a priority in medical prediction models.
+
+The confusion matrix demonstrated that Logistic Regression was able to correctly classify a substantial proportion of patients with and without heart disease. The model achieved a strong ability to identify disease cases, reflected by its sensitivity/recall performance. However, some false negative predictions remained, indicating that a proportion of patients with underlying disease may not be detected. In a clinical setting, further optimisation may focus on reducing false negatives because missed disease cases carry greater clinical consequences than unnecessary follow-up investigations.
+
+
 ### Random Forest
 Random Forest also demonstrated good disease detection capability.
 
@@ -290,6 +325,30 @@ Random Forest also demonstrated good disease detection capability.
 <p align="center">
   <em>Figure.4-Confusion matrix for Random Forest.</em>
 </p>
+
+
+**True Positive (TP)**
+Patients with heart disease correctly identified by Random Forest.
+The model successfully detected patients whose clinical profiles matched patterns associated with cardiovascular disease. This demonstrates that Random Forest can recognise complex combinations of risk factors.
+
+**True Negative (TN)**
+Patients without heart disease correctly classified. The model successfully identified lower-risk individuals. This reduces unnecessary clinical follow-up.
+
+**False Positive (FP)**
+Healthy patients incorrectly classified as having heart disease.
+Although these predictions are incorrect, they may be acceptable in a screening context because they lead to further assessment rather than missed diagnosis.
+
+**False Negative (FN)**
+Patients with heart disease incorrectly classified as healthy. These are the most concerning predictions.
+Possible consequences include:
+-	Failure to identify cardiovascular risk 
+-	Delayed intervention 
+-	Missed opportunity for preventive care 
+Therefore, recall remains a critical evaluation metric.
+
+The Random Forest confusion matrix showed that the model successfully identified many patients with heart disease while maintaining reasonable classification of non-disease cases. The model's ability to capture complex interactions between clinical variables contributed to its predictive performance. However, false negative cases remain clinically important because missed cardiovascular disease detection may delay appropriate management. Therefore, model evaluation should prioritise sensitivity and risk stratification rather than accuracy alone
+
+
 
 # 12. Cross-Validation Results
     
