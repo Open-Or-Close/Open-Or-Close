@@ -6,6 +6,8 @@
 
 <h2 data-importer="text" align="left">My Profile<br><br>Data Scientist passionate about Machine Learning, Deep Learning, and healthcare analytics. Exploring predictive modelling, statistical analysis, and AI-driven solutions using supervised, unsupervised, and semi-supervised learning approaches..</h2>
 
+Email: Reze2013mohseni@gmail.com
+
 ###
 
 <div data-importer="socials" align="left">
