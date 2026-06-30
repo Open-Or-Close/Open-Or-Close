@@ -1,3 +1,6 @@
+# This data science project has been done by Reza Mohseni
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -480,15 +483,4 @@ plt.show()
 
 
 
-#Note:
 
-
-
-# 1) Agar mikhahim, ke vaghti code ro run mikonim, tamame figure ha hamzaman neshan dade shavand, na faghat yeki yeki, bayad plt.show()
-#ro faghat baraye plot akhari estefade konim va na baraye har kodoom
-
-
-#8)
-#9) dar t-test ke anjam dade, beyne 2 group ba age motafavet nist, balke beyne 2 group target motafavet ast (Disease vs not-disease)
-
-#4) Chera figure(1) and figure(2) ham zaman nemiyayand?
