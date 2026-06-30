@@ -1,5 +1,3 @@
-
-
 <img data-importer="image" align="left" height="200" src="https://www.tierpoint.com/wp-content/uploads/2024/06/AI-Workloads-How-High-Density-Computing-Supports-Them_blog.png"  />
 
 
