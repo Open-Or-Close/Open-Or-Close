@@ -1,5 +1,5 @@
 
-# Healthcare Data Analytics and Machine Learning for Cardiovascular Risk Assessment
+# Medical Data Science Workflow for Cardiovascular Risk Prediction Using Clinical Patient Data
 
 # 1. Executive Summary
 
