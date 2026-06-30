@@ -78,22 +78,24 @@ The predictor variables represent patient characteristics and clinical measureme
 ![Dataset Overview](https://github.com/Open-Or-Close/Open-Or-Close/blob/59d5b7c3e5b59eb1940b398dd36a66570d1ce6fa/Heart-Disease-Clinical-Analytics/Data/Dataset.jpg)
 
 
-Variable	Type	Meaning
-Age	Numerical	Patient age in years. Age is an important cardiovascular risk factor because heart disease risk generally increases with age.
-Sex	Categorical	Patient sex (typically coded as male/female). Sex-related biological and lifestyle differences can influence cardiovascular risk.
-Chest Pain Type (cp)	Categorical	Type of chest pain experienced by the patient. Different chest pain patterns can indicate different levels of cardiac risk.
-Resting Blood Pressure (trestbps)	Numerical	Resting blood pressure measured in mm Hg. High blood pressure is a major cardiovascular risk factor.
-Cholesterol (chol)	Numerical	Serum cholesterol level measured in mg/dL. High cholesterol can contribute to atherosclerosis and cardiovascular risk.
-Fasting Blood Sugar (fbs)	Categorical	Indicates whether fasting blood sugar is greater than 120 mg/dL (1 = yes, 0 = no). High blood sugar may indicate diabetes-related cardiovascular risk.
-Resting ECG Results (restecg)	Categorical	Results of the resting electrocardiogram (ECG), showing possible abnormalities in heart electrical activity.
-Maximum Heart Rate Achieved (thalach)	Numerical	The maximum heart rate achieved during exercise testing. Lower maximum heart rate may indicate reduced cardiac function.
-Exercise-Induced Angina (exang)	Categorical	Indicates whether exercise causes chest pain (angina). Exercise-induced symptoms can suggest underlying coronary artery disease.
-ST Depression (oldpeak)	Numerical	Measures ST-segment depression induced by exercise compared with rest. It is an indicator of possible myocardial ischemia.
-Slope of Peak Exercise ST Segment (slope)	Categorical	Describes the slope pattern of the ST segment during peak exercise, which provides information about cardiac stress response.
-Number of Major Vessels (ca)	Numerical/Categorical	Number of major blood vessels visualised by fluoroscopy (0–3). Higher values may indicate greater coronary artery involvement.
-Thalassemia (thal)	Categorical	A blood disorder-related feature recorded in the dataset, representing different thalassemia states associated with heart risk assessment.
-Heart Disease (target)	Binary Target Variable	Indicates whether the patient has heart disease (1 = presence of disease, 0 = absence of disease). This is the outcome predicted by the machine learning models.
-<img width="1452" height="301" alt="image" src="https://github.com/user-attachments/assets/9e9a4c01-264b-4651-aff5-00fc1a8bb3a0" />
+## Dataset Variables Description
+
+| Variable | Type | Meaning |
+|---|---|---|
+| Age | Numerical | Patient age in years. Age is an important cardiovascular risk factor because heart disease risk generally increases with age. |
+| Sex | Categorical | Patient sex (typically coded as male/female). Sex-related biological and lifestyle differences can influence cardiovascular risk. |
+| Chest Pain Type (cp) | Categorical | Type of chest pain experienced by the patient. Different chest pain patterns can indicate different levels of cardiac risk. |
+| Resting Blood Pressure (trestbps) | Numerical | Resting blood pressure measured in mm Hg. High blood pressure is a major cardiovascular risk factor. |
+| Cholesterol (chol) | Numerical | Serum cholesterol level measured in mg/dL. High cholesterol can contribute to atherosclerosis and cardiovascular risk. |
+| Fasting Blood Sugar (fbs) | Categorical | Indicates whether fasting blood sugar is greater than 120 mg/dL (1 = yes, 0 = no). High blood sugar may indicate diabetes-related cardiovascular risk. |
+| Resting ECG Results (restecg) | Categorical | Results of the resting electrocardiogram (ECG), showing possible abnormalities in heart electrical activity. |
+| Maximum Heart Rate Achieved (thalach) | Numerical | The maximum heart rate achieved during exercise testing. Lower maximum heart rate may indicate reduced cardiac function. |
+| Exercise-Induced Angina (exang) | Categorical | Indicates whether exercise causes chest pain (angina). Exercise-induced symptoms can suggest underlying coronary artery disease. |
+| ST Depression (oldpeak) | Numerical | Measures ST-segment depression induced by exercise compared with rest. It is an indicator of possible myocardial ischemia. |
+| Slope of Peak Exercise ST Segment (slope) | Categorical | Describes the slope pattern of the ST segment during peak exercise, which provides information about cardiac stress response. |
+| Number of Major Vessels (ca) | Numerical/Categorical | Number of major blood vessels visualised by fluoroscopy (0–3). Higher values may indicate greater coronary artery involvement. |
+| Thalassemia (thal) | Categorical | A blood disorder-related feature recorded in the dataset, representing different thalassemia states associated with heart risk assessment. |
+| Heart Disease (target) | Binary Target Variable | Indicates whether the patient has heart disease (1 = presence of disease, 0 = absence of disease). This is the outcome predicted by the machine learning models. |
 
 
 # 4. Data Quality Assessment
