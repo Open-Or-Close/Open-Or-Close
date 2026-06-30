@@ -1,0 +1,494 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+
+
+
+df=pd.read_csv('heart.csv')
+print(df)
+
+============================
+# 1. Data Understanding
+============================
+
+
+# 1.1 Data structure
+print(df.shape)
+print(df.info())
+
+# 1.2 Data quality assessment
+null=df.isnull().sum()
+print('The number of missing values: ', null)
+
+dupl=df.duplicated().sum()
+print('The number of duplicates we have:', dupl)
+
+df_clean=df.drop_duplicates()
+print(df_clean)
+
+print(f'After removing duplicates, we have {df_clean.duplicated().sum()} duplicates')
+print('The number of rows, After removing duplicates:', df_clean.shape[0])
+
+===================================
+# 2.Exploratory Data Analysis
+===================================
+
+print('After data cleaning: \n', df_clean.describe())
+
+
+i=input('Select the attribute you want: ')   # Select one of the attributes among numerical columns ["age","trestbps", "chol", "thalach", "oldpeak"]
+
+-----------------------------------------------------
+#2.1 Check the Distribution of numerical features
+-----------------------------------------------------
+
+def check_distribution(i):
+
+
+    plt.figure(1)
+
+    plt.hist(df_clean[i], bins=10)
+    plt.xlabel(i.capitalize(), fontsize=18)
+    plt.ylabel('Frequency', fontsize=18)
+    plt.title(f'Distribution of {i.capitalize()}', fontsize=18)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.text(df_clean[i].min(),df_clean[i].max(), f'Mean is {df_clean[i].mean()}\n Median is {df_clean[i].median()}\n Standard deviation is {df_clean[i].std()}')
+    plt.tight_layout()
+    plt.show()
+
+
+check_distribution(i)
+
+--------------------------------------
+#2.2 Check the Target distribution
+--------------------------------------
+
+print(df_clean['target'].value_counts())        # Count the number of target values per class
+
+-------------------------------------------------
+#2.3 Correlation Analysis (Numerical features)
+-------------------------------------------------
+
+plt.figure(2)
+
+df_clean_numerical=df_clean[["age","trestbps", "chol", "thalach", "oldpeak"]]
+#corr=df_clean_numerical.corr()
+corr=df_clean_numerical.corr()
+print(corr)
+sns.heatmap(corr,cmap='coolwarm', annot=True, annot_kws={"fontsize": 16})  
+plt.title('Correlation matrix', fontsize=20)
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+
+plt.tight_layout()
+plt.show()
+
+---------------------------
+#2.3 Outlier Detection
+---------------------------
+
+def detect_outliers(i):
+    #["age", "trestbps", "chol", "thalach", "oldpeak"]
+
+
+
+        Q1 = df_clean[i].quantile(0.25)
+        Q3 = df_clean[i].quantile(0.75)
+
+        IQR = Q3 - Q1
+
+        lower = Q1 - 1.5 * IQR
+        upper = Q3 + 1.5 * IQR
+
+        outlier = df_clean[ (df_clean[i] < lower) | (df_clean[i] > upper)]
+
+        outliers=outlier[i]
+
+
+        print(f'Outliers are for {i} is: \n {outliers}')
+
+        return outliers
+
+outliers=detect_outliers(i)
+print(f'Outliers of {i} is (index,outlier):\n {outliers}')
+
+
+
+=============================
+# 3. Statistical Analysis
+=============================
+
+------------------------------------------
+# 3.1.1- T-test (Numerical features)
+------------------------------------------
+
+#Is the mean value of feature i different between healthy and diseased patients?
+
+def check_significance_N(i):
+
+    # i shows the numerical feature. Here we test the significance level of the target values against a selected numerical feature
+    from scipy.stats import ttest_ind
+
+    disease = df_clean[df_clean["target"] == 1][i]
+
+    healthy = df_clean[df_clean["target"] == 0][i]
+
+    t_stat, p = ttest_ind(disease, healthy, equal_var=False)    # because population variances may differ.
+
+    return p
+
+pN=check_significance_N(i)
+threshold = 0.05
+if pN < threshold:
+    print(f'{i} is significantly associated with Heart disease in this study ')
+else:
+    print(f'{i} is not significantly associated with Heart disease in this study ')
+
+
+-------------------------------------------------
+# 3.1.2- Chi-square (Categorical features)
+--------------------------------------------------
+
+#["Sex", "cp", "fbs", "restecg","exang","slope","thal"]
+# We are testing whether is categorical feature related to heart disease?
+
+
+j=input('Select a category among the categorical features: ')
+
+def check_significance_C(j):
+
+    # j shows the categorical feature. Here we test the significance level of the target values against a selected categorical feature
+
+    from scipy.stats import chi2_contingency
+
+    table = pd.crosstab(df_clean[j],df_clean["target"])
+
+    chi2, p, dof, expected = chi2_contingency(table)
+
+    return p
+
+pC=check_significance_C(j)
+threshold = 0.05
+if pC < threshold:
+    print(f'{j} is significantly associated with Heart disease in this study ')
+else:
+    print(f'{j} is not significantly associated with Heart disease in this study ')
+
+
+=============================
+# 4. Feature Engineering
+=============================
+
+
+--------------------------
+# 4.1. Standardisation
+---------------------------
+
+from sklearn.preprocessing import StandardScaler
+
+X=df_clean[["age","trestbps", "chol", "thalach", "oldpeak"]]
+
+scaler = StandardScaler()
+
+X_scaled = scaler.fit_transform(X)   #Variables are measured in different units. 
+
+====================================
+# 5. Train-Test Split/ Scaling
+====================================
+
+
+from sklearn.model_selection import train_test_split
+
+X = df_clean.drop("target", axis=1)
+
+y = df_clean["target"]
+
+# for medical classification we use stratify method because classes may not be balanced.
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42, stratify=y)
+
+
+# For Logistic regression because Random Forest does not need scaling
+
+scaler = StandardScaler()
+
+X_train_scaled = scaler.fit_transform(X_train)
+
+X_test_scaled = scaler.transform(X_test)
+
+
+========================
+# 6. Model Building
+========================
+
+------------------------------
+# 6.1.1 Logistic Regression 
+-------------------------------
+
+
+from sklearn.linear_model import LogisticRegression
+
+lr = LogisticRegression(max_iter=3000)
+
+lr.fit(X_train_scaled, y_train)
+
+y_pred = lr.predict(X_test_scaled)
+
+----------------------------------------------------------
+# 6.1.2 Random Forest (Captures non-linear relationships)
+----------------------------------------------------------
+
+from sklearn.ensemble import RandomForestClassifier
+
+rf = RandomForestClassifier(n_estimators=100,random_state=42)
+
+rf.fit(X_train, y_train)
+
+rf_pred=rf.predict(X_test)
+
+==========================
+# 7. Model Evaluation
+==========================
+
+--------------------------
+# 7.1. Confusion Matrix
+--------------------------
+
+from sklearn.metrics import confusion_matrix
+
+-----------------------------
+# 7.1.1. Logistic Regression
+-----------------------------
+cm_L = confusion_matrix(y_test,y_pred)
+
+print(f'Confusion matrix for Logistic regression:\n {cm_L}')       # In healthcare: Reducing FN is often more important than reducing FP.
+
+plt.figure(figsize=(7,5))
+
+sns.heatmap(
+    cm_L,
+    annot=True,
+    fmt="d",
+    cmap="Blues",
+    xticklabels=["No Disease", "Disease"],
+    yticklabels=["No Disease", "Disease"],
+    annot_kws={"fontsize":14}
+)
+
+plt.title("Confusion Matrix - Logistic Regression", fontsize=18)
+plt.xlabel("Predicted", fontsize=14)
+plt.ylabel("Actual", fontsize=14)
+
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+
+plt.show()
+
+-----------------------------------
+# 7.1.2 RandomForestClassifier
+------------------------------------
+
+cm_R = confusion_matrix(y_test,rf_pred)
+
+print(f'Confusion matrix for Logistic regression:\n {cm_R}')       # In healthcare: Reducing FN is often more important than reducing FP.
+
+
+plt.figure(figsize=(7,5))
+
+sns.heatmap(
+    cm_R,
+    annot=True,
+    fmt="d",
+    cmap="Blues",
+    xticklabels=["No Disease", "Disease"],
+    yticklabels=["No Disease", "Disease"],
+    annot_kws={"fontsize":14}
+)
+
+plt.title("Confusion Matrix - Random Forest", fontsize=18)
+plt.xlabel("Predicted", fontsize=14)
+plt.ylabel("Actual", fontsize=14)
+
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+
+plt.show()
+
+
+
+
+==============================
+# 7.2. Classification Report
+==============================
+
+
+-----------------------------
+#7.2.1  Logistic Regression:
+-----------------------------
+
+
+from sklearn.metrics import classification_report
+
+print(f'Classification report for Logistic regression:\n{classification_report(y_test,y_pred)}')
+
+
+-----------------------------------
+#7.2.2  RandomForestClassifier:
+-----------------------------------
+
+from sklearn.metrics import classification_report
+
+
+print(f'Classification report for Random Forest:\n{classification_report(y_test,rf_pred)}')
+
+
+======================
+# 7.3. ROC-AUC
+======================
+
+--------------------------------
+# 7.3.1 Logistic Regression
+--------------------------------
+from sklearn.metrics import roc_auc_score
+
+lr_prob=lr.predict_proba(X_test)[:,1]   # ROC-AUC requires probabilities.
+ROC_L=roc_auc_score(y_test,lr_prob)
+print(f'ROC_AUC for Logistic regression: {ROC_L}')
+
+----------------------------------
+# 7.3.2 RandomForestClassifier
+-----------------------------------
+
+rf_prob=rf.predict_proba(X_test)[:,1]   # ROC-AUC requires probabilities.
+ROC_R=roc_auc_score(y_test,rf_prob)
+print(f'ROC_AUC for Random Forest: {ROC_R}')
+
+
+
+========================================
+# 8. Feature Importance (Random Forest)
+========================================
+
+
+importance = rf.feature_importances_
+
+# Create dataframe
+features = pd.DataFrame({
+    "Feature": X.columns,
+    "Importance": importance
+})
+
+# Sort features by importance
+features = features.sort_values("Importance", ascending=True)
+
+plt.figure(figsize=(8,6))
+
+bars = plt.barh(
+    features["Feature"],
+    features["Importance"]
+)
+
+plt.title("Feature Importance - Random Forest", fontsize=20)
+plt.xlabel("Importance Score", fontsize=16)
+plt.ylabel("Clinical Variables", fontsize=16)
+
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+
+# Add values
+for bar in bars:
+    plt.text(
+        bar.get_width(),
+        bar.get_y() + bar.get_height()/2,
+        f"{bar.get_width():.3f}",
+        va="center",
+        fontsize=14
+    )
+
+plt.tight_layout()
+plt.show()
+
+
+========================================================================
+# 9. Cross Validation (Provides more reliable performance estimates.)
+========================================================================
+
+from sklearn.model_selection import cross_val_score
+
+------------------------------
+# 9.1. Logistic Regression
+------------------------------
+
+scores_L = cross_val_score(lr,X,y,cv=5, scoring="roc_auc") # By default scring is "Accuracy", but for healthcare it is better to use "roc_auc"
+
+print(f'Cross validation for Logistic Regression {scores_L.mean()}')
+
+---------------------------
+# 9.2. Random Forest
+---------------------------
+
+scores_R = cross_val_score(rf,X,y,cv=5, scoring="roc_auc") #By default scring is "Accuracy", but for healthcare it is better to use "roc_auc"
+
+print(f'Cross validation for Random Forest {scores_R.mean()}')
+
+
+=================================================================
+# 10. Hyperparameter Tuning (Find the best model configuration.)
+=================================================================
+
+
+------------------------------
+# 10.1 Logistic Regression
+-------------------------------
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
+
+# Controls Regularization. Small C means strong regularization, but large one means less regularization
+params = {"C": [0.001, 0.01, 0.1, 1, 10, 100], "max_iter": [2000, 3500, 4000]}
+
+gridL = GridSearchCV(lr,params,cv=5,scoring="accuracy",n_jobs=-1)
+
+gridL.fit(X_train, y_train)
+
+--------------------------
+# 10.2. Random Forest
+--------------------------
+
+from sklearn.model_selection import GridSearchCV
+
+params = {"n_estimators": [100, 200],"max_depth": [3, 5, 10]}
+
+gridR = GridSearchCV(rf,params,cv=5)
+
+gridR.fit(X_train, y_train)
+
+# Comparison
+plt.figure(3)
+models = {
+"Logistic Regression": gridL.best_score_,
+"Random Forest": gridR.best_score_
+}
+
+plt.bar(models.keys(),models.values())
+plt.ylabel("Accuracy")
+plt.show()
+
+
+
+
+
+#Note:
+
+
+
+# 1) Agar mikhahim, ke vaghti code ro run mikonim, tamame figure ha hamzaman neshan dade shavand, na faghat yeki yeki, bayad plt.show()
+#ro faghat baraye plot akhari estefade konim va na baraye har kodoom
+
+
+#8)
+#9) dar t-test ke anjam dade, beyne 2 group ba age motafavet nist, balke beyne 2 group target motafavet ast (Disease vs not-disease)
+
+#4) Chera figure(1) and figure(2) ham zaman nemiyayand?
