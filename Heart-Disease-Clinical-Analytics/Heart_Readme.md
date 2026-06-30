@@ -75,9 +75,6 @@ The dataset contained **14 variables**, including:
 The predictor variables represent patient characteristics and clinical measurements used to estimate the likelihood of heart disease.
 
 
-![Dataset Overview](https://github.com/Open-Or-Close/Open-Or-Close/blob/59d5b7c3e5b59eb1940b398dd36a66570d1ce6fa/Heart-Disease-Clinical-Analytics/Data/Dataset.jpg)
-
-
 ## Dataset Variables Description
 
 | Variable | Type | Meaning |
