@@ -279,7 +279,9 @@ The false negative rate was relatively low, which is important in healthcare bec
   <em>Figure.3-Confusion matrix for Logistic Regression.</em>
 </p>
 
+### Confusion Matrix Interpretation (Logistic Regression)
 
+The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
 **True Positive (TP)**
 Patients who actually had heart disease and were correctly identified by Logistic Regression.
 These are successful detections.
@@ -326,6 +328,9 @@ Random Forest also demonstrated good disease detection capability.
   <em>Figure.4-Confusion matrix for Random Forest.</em>
 </p>
 
+### Confusion Matrix Interpretation (Random Forest)
+
+The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
 
 **True Positive (TP)**
 Patients with heart disease correctly identified by Random Forest.
@@ -352,10 +357,13 @@ The Random Forest confusion matrix showed that the model successfully identified
 
 # 12. Cross-Validation Results
     
-Five-fold cross-validation was performed using ROC-AUC.
-Model	Mean ROC-AUC
-Logistic Regression	0.894
-Random Forest	0.911
+### Five-Fold Cross-Validation Performance (ROC-AUC)
+
+| Model | Mean ROC-AUC |
+|---|---|
+| Logistic Regression | 0.894 |
+| Random Forest | 0.911 |
+
 Random Forest achieved a higher cross-validation score, suggesting stronger predictive stability across different data splits. Furthermore, Random Forest achieved a higher cross-validation ROC-AUC compared with Logistic Regression, indicating superior discriminative performance. These results demonstrate that Random Forest can capture patterns within the dataset more effectively and maintain consistent performance across different subsets of the data. The strong cross-validation performance suggests that the learned patterns are reproducible and that Random Forest has stronger generalisation ability compared with Logistic Regression.
 
 
