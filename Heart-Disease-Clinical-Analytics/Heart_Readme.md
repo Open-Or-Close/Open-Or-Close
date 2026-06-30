@@ -101,7 +101,7 @@ The predictor variables represent patient characteristics and clinical measureme
 
 A complete missing value assessment was performed.
 
-### Result:
+** Result **:
 - No missing values were identified.
 - Therefore, no imputation strategy was required.
 
@@ -113,7 +113,7 @@ Duplicate records were identified and removed.
 
 This step was important because repeated observations can artificially inflate model performance and reduce reliability.
 
-### After cleaning:
+After cleaning:
 - The dataset contained only unique patient observations.
 
 
