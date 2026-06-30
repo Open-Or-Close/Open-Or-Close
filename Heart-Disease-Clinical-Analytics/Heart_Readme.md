@@ -118,8 +118,10 @@ A stratified train-test split was applied to maintain consistent proportions of 
 
 <img width="975" height="517" alt="image" src="https://github.com/user-attachments/assets/43a161d9-bede-4a47-b578-9ef469983489" />
 
-                        Figure.1-Distribution of Cholesterol (Chol). It is skewed with outliers
-
+                        
+<p align="center">
+  <em>Figure.1: Distribution of Cholesterol (Chol). It is skewed with outliers.</em>
+</p>
 
 ## Outlier Detection
 In many machine learning projects, outliers are removed because they may result from measurement errors, data entry mistakes, or sensor-related problems. However, in healthcare datasets, extreme values may represent genuine physiological conditions rather than errors. For example, a high cholesterol value may indicate:
