@@ -282,7 +282,8 @@ The false negative rate was relatively low, which is important in healthcare bec
 ### Confusion Matrix Interpretation (Logistic Regression)
 
 The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
-**True Positive (TP)**
+**True Positive (TP)**  
+
 Patients who actually had heart disease and were correctly identified by Logistic Regression.
 These are successful detections.
 The model correctly recognised high-risk patients who may require:
@@ -291,12 +292,14 @@ The model correctly recognised high-risk patients who may require:
 -	Clinical follow-up 
 A higher TP count contributes to higher sensitivity (recall).
 
-**True Negative (TN)**
+**True Negative (TN)**  
+
 Patients without heart disease who were correctly classified as healthy.
 The model successfully avoided unnecessary concern or additional testing for low-risk patients.
 A good TN value indicates the model can distinguish healthy patients from diseased patients.
 
-**False Positive (FP)**
+**False Positive (FP)**  
+
 Patients without heart disease who were incorrectly predicted as having disease.
 These patients may experience:
 -	Additional diagnostic testing 
@@ -304,7 +307,8 @@ These patients may experience:
 -	Possible anxiety 
 However, in cardiovascular screening, false positives are generally considered less harmful than false negatives because further investigation can confirm the diagnosis.
 
-**False Negative (FN)**
+**False Negative (FN)**  
+
 Patients who had heart disease but were incorrectly predicted as healthy.
 This is the most clinically important error.
 A false negative may result in:
@@ -328,22 +332,27 @@ Random Forest also demonstrated good disease detection capability.
   <em>Figure.4-Confusion matrix for Random Forest.</em>
 </p>
 
-### Confusion Matrix Interpretation (Random Forest)
+### Confusion Matrix Interpretation (Random Forest)  
+
 
 The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
 
-**True Positive (TP)**
+**True Positive (TP)**  
+
 Patients with heart disease correctly identified by Random Forest.
 The model successfully detected patients whose clinical profiles matched patterns associated with cardiovascular disease. This demonstrates that Random Forest can recognise complex combinations of risk factors.
 
-**True Negative (TN)**
+**True Negative (TN)**  
+
 Patients without heart disease correctly classified. The model successfully identified lower-risk individuals. This reduces unnecessary clinical follow-up.
 
-**False Positive (FP)**
+**False Positive (FP)**  
+
 Healthy patients incorrectly classified as having heart disease.
 Although these predictions are incorrect, they may be acceptable in a screening context because they lead to further assessment rather than missed diagnosis.
 
-**False Negative (FN)**
+**False Negative (FN)**  
+
 Patients with heart disease incorrectly classified as healthy. These are the most concerning predictions.
 Possible consequences include:
 -	Failure to identify cardiovascular risk 
@@ -371,34 +380,40 @@ Random Forest achieved a higher cross-validation score, suggesting stronger pred
 # 13. Hyperparameter Optimisation
 GridSearchCV was used to identify optimal model configurations.
 ### Logistic Regression
+
 Best parameters:
-Parameter	Value
-C	0.1
-Maximum iterations	2000
 
-Best cross-validation accuracy:
-82.6%
+| Parameter | Value |
+|---|---|
+| C | 0.1 |
+| Maximum iterations | 2000 |
 
+**Best cross-validation accuracy:** 82.6%
 
 ### Random Forest
 Best parameters:
-Parameter	Value
-Number of trees	200
-Maximum depth	3
 
-Best cross-validation accuracy:
-85.5%
+| Parameter | Value |
+|---|---|
+| Number of trees | 200 |
+| Maximum depth | 3 |
+
+**Best cross-validation accuracy:** 85.5%
 
 
 # 14. Feature Importance Analysis
 Random Forest feature importance identified the strongest contributors to heart disease prediction.
-Rank	Feature	Importance
-1	Chest pain type (cp)	0.174
-2	Maximum heart rate (thalach)	0.132
-3	Number of vessels (ca)	0.106
-4	ST depression (oldpeak)	0.097
-5	Thalassemia	0.090
-6	Age	0.083
+
+
+| Rank | Feature | Importance |
+|---|---|---|
+| 1 | Chest pain type (cp) | 0.174 |
+| 2 | Maximum heart rate (thalach) | 0.132 |
+| 3 | Number of vessels (ca) | 0.106 |
+| 4 | ST depression (oldpeak) | 0.097 |
+| 5 | Thalassemia | 0.090 |
+| 6 | Age | 0.083 |
+
 
 The results indicate that clinical indicators related to cardiac symptoms, exercise response, and physiological measurements contributed strongly to prediction.
 
