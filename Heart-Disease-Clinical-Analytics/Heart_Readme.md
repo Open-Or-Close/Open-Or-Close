@@ -281,8 +281,8 @@ The false negative rate was relatively low, which is important in healthcare bec
 
 ### Confusion Matrix Interpretation (Logistic Regression)
 
-The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
-**True Positive (TP)**  
+
+**True Positive (TP)**
 
 Patients who actually had heart disease and were correctly identified by Logistic Regression.
 These are successful detections.
@@ -292,13 +292,13 @@ The model correctly recognised high-risk patients who may require:
 -	Clinical follow-up 
 A higher TP count contributes to higher sensitivity (recall).
 
-**True Negative (TN)**  
+**True Negative (TN)**
 
 Patients without heart disease who were correctly classified as healthy.
 The model successfully avoided unnecessary concern or additional testing for low-risk patients.
 A good TN value indicates the model can distinguish healthy patients from diseased patients.
 
-**False Positive (FP)**  
+**False Positive (FP)**
 
 Patients without heart disease who were incorrectly predicted as having disease.
 These patients may experience:
@@ -307,7 +307,7 @@ These patients may experience:
 -	Possible anxiety 
 However, in cardiovascular screening, false positives are generally considered less harmful than false negatives because further investigation can confirm the diagnosis.
 
-**False Negative (FN)**  
+**False Negative (FN)**
 
 Patients who had heart disease but were incorrectly predicted as healthy.
 This is the most clinically important error.
@@ -317,7 +317,8 @@ A false negative may result in:
 -	Increased cardiovascular risk 
 Therefore, reducing FN cases is a priority in medical prediction models.
 
-The confusion matrix demonstrated that Logistic Regression was able to correctly classify a substantial proportion of patients with and without heart disease. The model achieved a strong ability to identify disease cases, reflected by its sensitivity/recall performance. However, some false negative predictions remained, indicating that a proportion of patients with underlying disease may not be detected. In a clinical setting, further optimisation may focus on reducing false negatives because missed disease cases carry greater clinical consequences than unnecessary follow-up investigations.
+The confusion matrix demonstrated that Logistic Regression was able to correctly classify a substantial proportion of patients with and without heart disease. The model achieved a strong ability to identify disease cases, reflected by its Recall/sensitivity performance. However, some false negative predictions remained, indicating that a proportion of patients with underlying disease may not be detected. In a clinical setting, further optimisation may focus on reducing false negatives because missed disease cases carry greater clinical consequences than unnecessary follow-up investigations.
+
 
 
 ### Random Forest
@@ -335,7 +336,7 @@ Random Forest also demonstrated good disease detection capability.
 ### Confusion Matrix Interpretation (Random Forest)  
 
 
-The confusion matrix provides insight into the model’s ability to correctly identify patients with and without
+The confusion matrix provides insight into the model’s ability to correctly identify patients with and without disease.
 
 **True Positive (TP)**  
 
