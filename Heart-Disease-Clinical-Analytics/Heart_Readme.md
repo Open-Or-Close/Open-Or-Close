@@ -120,7 +120,7 @@ A stratified train-test split was applied to maintain consistent proportions of 
 
                         
 <p align="center">
-  <em>Figure.1: Distribution of Cholesterol (Chol). It is skewed with outliers.</em>
+  <em>Figure.1: Distribution of Cholesterol (Chol). It contains outliers.</em>
 </p>
 
 ## Outlier Detection
@@ -157,8 +157,11 @@ Correlation analysis was conducted for numerical variables.
 
 <img width="975" height="531" alt="image" src="https://github.com/user-attachments/assets/d83415e1-5b7e-4fed-8957-76c6069483fa" />
 
-                            Figure.2-Correlation among the numerical variables 
+                            
 
+<p align="center">
+  <em>Figure.2: Correlation among the numerical variables.</em>
+</p>
 
 
 # 7. Statistical Analysis
@@ -250,7 +253,10 @@ The false negative rate was relatively low, which is important in healthcare bec
 
 <img width="1010" height="614" alt="image" src="https://github.com/user-attachments/assets/aac14b53-d3db-42c5-af55-d6044e2aae92" />
 
-Figure.3-Confusion matrix for Logistic Regression
+
+<p align="center">
+  <em>Figure.3-Confusion matrix for Logistic Regression.</em>
+</p>
 
 ### Random Forest
 Random Forest also demonstrated good disease detection capability.
@@ -258,9 +264,11 @@ Random Forest also demonstrated good disease detection capability.
 <img width="975" height="589" alt="image" src="https://github.com/user-attachments/assets/8bac1254-270c-4a2a-9110-ef800ade1f71" />
 
 
-Figure.4-Confusion matrix for Random Forest
 
 
+<p align="center">
+  <em>Figure.4-Confusion matrix for Random Forest.</em>
+</p>
 
 # 12. Cross-Validation Results
     
@@ -308,7 +316,11 @@ The results indicate that clinical indicators related to cardiac symptoms, exerc
 
 
 <img width="1009" height="549" alt="image" src="https://github.com/user-attachments/assets/6765c11c-246c-4cf5-893a-81a0d577053a" />
-Figure.5-Feature importance captured by Random Forest
+
+
+<p align="center">
+  <em>Figure.5-Feature importance captured by Random Forest.</em>
+</p>
 
 It is clear from Fig.5 that Chest pain type (cp) was one of the most influential predictors. The model learned that different chest pain patterns are associated with different probabilities of heart disease.
 
