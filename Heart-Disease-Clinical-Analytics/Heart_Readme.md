@@ -115,9 +115,13 @@ The analysis included:
 •	Maximum heart rate
 •	ST depression
 
+<img width="975" height="531" alt="image" src="https://github.com/user-attachments/assets/d83415e1-5b7e-4fed-8957-76c6069483fa" />
+
+Figure.2-Correlation among the numerical variables 
+
 # 7. Statistical Analysis
 Statistical hypothesis testing was performed to evaluate relationships between clinical variables and heart disease outcomes.
-Numerical Variables
+### Numerical Variables
 Independent t-tests were used.
 Hypothesis:
 	H0: There is no difference between patients with and without heart disease.
@@ -127,6 +131,28 @@ Significance level: α = 0.05
 Table 1- P-value of each categorical variable associated with heart disease in the dataset
 
 <img width="1033" height="213" alt="image" src="https://github.com/user-attachments/assets/5c887f58-0a55-42b8-9d7b-fa5fefcf4066" />
+
+Table 1 presents the results of the t-test, indicating which numerical variables are significantly associated with heart disease and which are not. The significance threshold for this study was set at 0.05. After conducting an independent t-test, the results showed that cholesterol levels were not significantly associated with heart disease in this dataset, with a p-value of 0.1553. In contrast, age was found to be statistically significantly associated with heart disease because the mean age differed significantly between the two groups. Since the p-value was less than 0.05 (p < 0.05), the null hypothesis was rejected.
+Although age is a well-established cardiovascular risk factor, this dataset does not fully demonstrate the expected population-level pattern. This may be because the dataset consists of selected patients who have already undergone clinical evaluation for cardiac disease rather than representing a general population sample.
+
+### Categorical Variables
+Chi-square tests were applied to determine whether categorical variables were associated with heart disease.
+This approach evaluates whether variables such as chest pain type or exercise-induced angina are statistically related to disease status.
+The hypothesis tested was:
+	H₀ (Null hypothesis):
+There is no association between the categorical variable and heart disease status.
+	H₁ (Alternative hypothesis):
+The categorical variable is associated with heart disease status.
+
+Significance level: α=0.05
+
+Table 2- P-value of each categorical variable associated with heart disease in the dataset
+<img width="975" height="299" alt="image" src="https://github.com/user-attachments/assets/fdde56a4-9d96-4f4c-bcc1-28a5698ce584" />
+
+
+The p-values of the variables presented in Table 2 are less than 0.05, indicating that these variables are statistically significantly associated with heart disease in this dataset. For example, sex is significantly associated with heart disease because the distribution of heart disease cases differs substantially between males and females. In contrast, fasting blood sugar is not significantly associated with heart disease in this dataset, as its p-value is greater than 0.05. This suggests that sex may represent an important cardiovascular risk factor, as biological, hormonal, and lifestyle-related differences between males and females can influence cardiovascular risk.
+
+
 
 
 # 8. Data Preprocessing
@@ -174,6 +200,9 @@ Figure.3-Confusion matrix for Logistic Regression
 
 ### Random Forest
 Random Forest also demonstrated good disease detection capability.
+
+<img width="975" height="589" alt="image" src="https://github.com/user-attachments/assets/8bac1254-270c-4a2a-9110-ef800ade1f71" />
+
 
 Figure.4-Confusion matrix for Random Forest
 
