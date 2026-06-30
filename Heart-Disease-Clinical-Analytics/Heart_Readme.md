@@ -97,7 +97,7 @@ The predictor variables represent patient characteristics and clinical measureme
 
 # 4. Data Quality Assessment
 
-## Missing Data
+### Missing Data
 
 A complete missing value assessment was performed.
 
@@ -107,7 +107,7 @@ A complete missing value assessment was performed.
 
 
 
-## Duplicate Detection
+### Duplicate Detection
 
 Duplicate records were identified and removed.
 
