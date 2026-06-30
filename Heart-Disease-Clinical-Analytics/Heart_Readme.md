@@ -38,7 +38,7 @@ Model performance was evaluated using multiple metrics, including:
 
 The results demonstrated that both models successfully identified patterns associated with heart disease. Logistic Regression achieved stronger performance on the independent test dataset, while Random Forest demonstrated a higher cross-validation ROC-AUC score, indicating strong generalisation capability and robustness across different data subsets.
 
----
+
 
 # 2. Clinical Objective
 
@@ -51,7 +51,7 @@ The target variable represented heart disease status:
 
 The primary aim was to investigate whether machine learning approaches could support cardiovascular risk assessment by identifying important clinical predictors associated with heart disease.
 
----
+
 
 # 3. Dataset Description
 
@@ -157,6 +157,8 @@ Correlation analysis was conducted for numerical variables.
 
                             Figure.2-Correlation among the numerical variables 
 
+
+
 # 7. Statistical Analysis
 Statistical hypothesis testing was performed to evaluate relationships between clinical variables and heart disease outcomes.
 
@@ -222,7 +224,8 @@ Logistic Regression was selected because it provides:
 -	Probability-based predictions
 -	Clinical transparency
 This is valuable in healthcare where understanding decision factors is important.
-________________________________________
+
+
 ### 9.2 Random Forest
 Random Forest was selected because it:
 -	Captures non-linear patterns
@@ -277,7 +280,8 @@ Maximum iterations	2000
 
 Best cross-validation accuracy:
 82.6%
-________________________________________
+
+
 ### Random Forest
 Best parameters:
 Parameter	Value
@@ -297,6 +301,7 @@ Rank	Feature	Importance
 4	ST depression (oldpeak)	0.097
 5	Thalassemia	0.090
 6	Age	0.083
+
 The results indicate that clinical indicators related to cardiac symptoms, exercise response, and physiological measurements contributed strongly to prediction.
 
 
@@ -314,7 +319,8 @@ Key findings:
 -	Clinical variables related to chest pain, heart rate response, and exercise-related measurements were important predictors.
 These models could potentially support clinicians by providing additional risk information during patient assessment.
 However, machine learning predictions should be considered decision-support tools rather than replacements for clinical judgement.
-________________________________________
+
+
 # 16. Limitations
 Several limitations should be considered:
 1.	The dataset size is relatively limited.
@@ -324,7 +330,8 @@ Several limitations should be considered:
     -	Model calibration
     -	Bias assessment
     -	Prospective validation
-________________________________________
+
+
 # 17. Conclusion
 This project demonstrates a complete medical data science workflow for heart disease prediction.
 The analysis successfully integrated:
