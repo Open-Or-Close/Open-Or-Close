@@ -120,7 +120,7 @@ A stratified train-test split was applied to maintain consistent proportions of 
 
                         
 <p align="center">
-  <em>Figure.1: Distribution of Cholesterol (Chol). It contains outliers.</em>
+  <em>Figure.1: Distribution of Cholesterol (Chol). The cholesterol distribution shows that most patients have cholesterol values concentrated around the middle range, while fewer patients have very high cholesterol levels. The distribution indicates variability in cholesterol levels across the study population, with some extreme values suggesting potential outliers.</em>
 </p>
 
 ## Outlier Detection
