@@ -75,7 +75,7 @@ The dataset contained **14 variables**, including:
 The predictor variables represent patient characteristics and clinical measurements used to estimate the likelihood of heart disease.
 
 
-## Dataset Variables Description
+### Dataset Variables Description
 
 | Variable | Type | Meaning |
 |---|---|---|
@@ -101,7 +101,7 @@ The predictor variables represent patient characteristics and clinical measureme
 
 A complete missing value assessment was performed.
 
-** Result **:
+Result:
 - No missing values were identified.
 - Therefore, no imputation strategy was required.
 
@@ -140,7 +140,7 @@ A stratified train-test split was applied to maintain consistent proportions of 
   <em>Figure.1: Distribution of Cholesterol (Chol). The cholesterol distribution shows that most patients have cholesterol values concentrated around the middle range, while fewer patients have very high cholesterol levels. The distribution indicates variability in cholesterol levels across the study population, with some extreme values suggesting potential outliers.</em>
 </p>
 
-## Outlier Detection
+### Outlier Detection
 In many machine learning projects, outliers are removed because they may result from measurement errors, data entry mistakes, or sensor-related problems. However, in healthcare datasets, extreme values may represent genuine physiological conditions rather than errors. For example, a high cholesterol value may indicate:
 
 - A patient with dyslipidaemia
@@ -154,16 +154,16 @@ Removing such values could eliminate clinically meaningful patient information f
 # 6. Correlation Analysis
 
 
-## Correlation Analysis
+### Correlation Analysis
 
 Correlation analysis was conducted for numerical variables.
 
-### Objectives:
+**Objectives:**
 - Identify relationships between clinical measurements
 - Detect possible redundancy between variables
 - Understand cardiovascular risk patterns
 
-### Variables analysed:
+**Variables analysed:**
 - Age
 - Blood pressure
 - Cholesterol
@@ -184,16 +184,16 @@ Correlation analysis was conducted for numerical variables.
 # 7. Statistical Analysis
 Statistical hypothesis testing was performed to evaluate relationships between clinical variables and heart disease outcomes.
 
-## T-test (Numerical Variables)
+### T-test (Numerical Variables)
 
 Independent t-tests were used.
 
-### Hypothesis:
+**Hypothesis:**
 
 - **H0 (Null Hypothesis):** There is no difference between patients with and without heart disease.
 - **H1 (Alternative Hypothesis):** The clinical feature differs significantly between the two groups.
 
-### Significance level:
+**Significance level:**
 - α = 0.05
 
 Table 1- P-value of each categorical variable associated with heart disease in the dataset
@@ -204,18 +204,18 @@ Table 1 presents the results of the t-test, indicating which numerical variables
 Although age is a well-established cardiovascular risk factor, this dataset does not fully demonstrate the expected population-level pattern. This may be because the dataset consists of selected patients who have already undergone clinical evaluation for cardiac disease rather than representing a general population sample.
 
 
-## Chi-Square Test (Categorical Variables)
+### Chi-Square Test (Categorical Variables)
 
 Chi-square tests were applied to determine whether categorical variables were associated with heart disease.
 
 This approach evaluates whether variables such as chest pain type or exercise-induced angina are statistically related to disease status.
 
-### Hypothesis:
+**Hypothesis:**
 
 - **H₀ (Null hypothesis):** There is no association between the categorical variable and heart disease status.
 - **H₁ (Alternative hypothesis):** The categorical variable is associated with heart disease status.
 
-### Significance level:
+**Significance level:**
 - α = 0.05
 
 
@@ -344,7 +344,7 @@ It is clear from Fig.5 that Chest pain type (cp) was one of the most influential
 
 # 15. Clinical Interpretation
 The developed machine learning models demonstrate the potential of artificial intelligence for cardiovascular risk prediction.
-Key findings:
+**Key findings:**
 -	Logistic Regression provided strong predictive performance with high interpretability.
 -	Random Forest provided strong generalisation capability through cross-validation.
 -	Clinical variables related to chest pain, heart rate response, and exercise-related measurements were important predictors.
