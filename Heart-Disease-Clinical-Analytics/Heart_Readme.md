@@ -78,7 +78,8 @@ The predictor variables represent patient characteristics and clinical measureme
 
 
 # 4. Data Quality Assessment
-Missing Data
+
+- Missing Data
 A complete missing value assessment was performed.
 Result:
 -	No missing values were identified.
@@ -93,10 +94,10 @@ After cleaning:
 # 5. Exploratory Data Analysis
 Exploratory analysis was performed to understand patient characteristics and identify relationships between clinical variables.
 The analysis included:
-•	Feature distributions
-•	Target class distribution
-•	Correlation analysis
-•	Outlier detection
+-	Feature distributions
+-	Target class distribution
+-	Correlation analysis
+-	Outlier detection
 The target variable distribution was examined to ensure appropriate model evaluation.
 A stratified train-test split was applied to maintain similar disease/non-disease proportions between training and testing datasets.
 
