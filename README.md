@@ -2,10 +2,13 @@
 
 <img data-importer="image" align="left" height="200" src="https://www.tierpoint.com/wp-content/uploads/2024/06/AI-Workloads-How-High-Density-Computing-Supports-Them_blog.png"  />
 
-###
 
-<h2 data-importer="text" align="left">My Profile<br><br>Data Scientist passionate about Machine Learning, Deep Learning, and healthcare analytics. Exploring predictive modelling, statistical analysis, and AI-driven solutions using supervised, unsupervised, and semi-supervised learning approaches.  
 
+## 👤 Profile
+
+Data Scientist passionate about applying **Machine Learning, Deep Learning, and healthcare analytics** to solve real-world problems. Experienced in **predictive modelling, statistical analysis, and AI-driven solutions** using supervised, unsupervised, and semi-supervised learning approaches.
+
+Interested in developing data-driven solutions that combine advanced analytics with healthcare insights to support evidence-based decision-making.
 
 
 Email: Reza2013mohseni@gmail.com
