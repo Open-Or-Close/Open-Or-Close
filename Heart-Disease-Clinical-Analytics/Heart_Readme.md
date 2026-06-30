@@ -257,13 +257,14 @@ Random Forest was selected because it:
 
 # 10. Model Evaluation Results
 
-## Independent Test Set Performance
+### Independent Test Set Performance
 
 | Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
 |---|---|---|---|---|---|
 | Logistic Regression | 80.3% | 80.0% | 84.8% | 82.4% | 0.871 |
 | Random Forest | 75.4% | 76.5% | 78.8% | 77.6% | 0.861 |
 
+Logistic Regression achieved slightly higher performance on the independent test dataset, while maintaining strong recall and ROC-AUC. This highlights its effectiveness and interpretability for clinical prediction tasks.
 
 # 11. Confusion Matrix Analysis
 
