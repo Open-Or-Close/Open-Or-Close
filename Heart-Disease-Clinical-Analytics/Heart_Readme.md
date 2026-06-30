@@ -120,18 +120,37 @@ A stratified train-test split was applied to maintain consistent proportions of 
 Figure.1-Distribution of Cholesterol (Chol). It is skewed with outliers
 
 
+## Outlier Detection
+In many machine learning projects, outliers are removed because they may result from measurement errors, data entry mistakes, or sensor-related problems. However, in healthcare datasets, extreme values may represent genuine physiological conditions rather than errors. For example, a high cholesterol value may indicate:
+
+- A patient with dyslipidaemia
+- Increased cardiovascular risk
+
+Removing such values could eliminate clinically meaningful patient information from the dataset. Therefore, in this clinical project, outliers were not removed because they may represent important variations in patient health characteristics.
+
+
+
+
 # 6. Correlation Analysis
+
+
+## Correlation Analysis
+
 Correlation analysis was conducted for numerical variables.
-The purpose was to:
-•	Identify relationships between clinical measurements
-•	Detect possible redundancy between variables
-•	Understand cardiovascular risk patterns
-The analysis included:
-•	Age
-•	Blood pressure
-•	Cholesterol
-•	Maximum heart rate
-•	ST depression
+
+### Objectives:
+- Identify relationships between clinical measurements
+- Detect possible redundancy between variables
+- Understand cardiovascular risk patterns
+
+### Variables analysed:
+- Age
+- Blood pressure
+- Cholesterol
+- Maximum heart rate
+- ST depression
+
+
 
 <img width="975" height="531" alt="image" src="https://github.com/user-attachments/assets/d83415e1-5b7e-4fed-8957-76c6069483fa" />
 
@@ -139,12 +158,18 @@ Figure.2-Correlation among the numerical variables
 
 # 7. Statistical Analysis
 Statistical hypothesis testing was performed to evaluate relationships between clinical variables and heart disease outcomes.
-### Numerical Variables
+
+## T-test (Numerical Variables)
+
 Independent t-tests were used.
-Hypothesis:
-	H0: There is no difference between patients with and without heart disease.
-	H1: The clinical feature differs significantly between groups.
-Significance level: α = 0.05
+
+### Hypothesis:
+
+- **H0 (Null Hypothesis):** There is no difference between patients with and without heart disease.
+- **H1 (Alternative Hypothesis):** The clinical feature differs significantly between the two groups.
+
+### Significance level:
+- α = 0.05
 
 Table 1- P-value of each categorical variable associated with heart disease in the dataset
 
@@ -153,16 +178,21 @@ Table 1- P-value of each categorical variable associated with heart disease in t
 Table 1 presents the results of the t-test, indicating which numerical variables are significantly associated with heart disease and which are not. The significance threshold for this study was set at 0.05. After conducting an independent t-test, the results showed that cholesterol levels were not significantly associated with heart disease in this dataset, with a p-value of 0.1553. In contrast, age was found to be statistically significantly associated with heart disease because the mean age differed significantly between the two groups. Since the p-value was less than 0.05 (p < 0.05), the null hypothesis was rejected.
 Although age is a well-established cardiovascular risk factor, this dataset does not fully demonstrate the expected population-level pattern. This may be because the dataset consists of selected patients who have already undergone clinical evaluation for cardiac disease rather than representing a general population sample.
 
-### Categorical Variables
-Chi-square tests were applied to determine whether categorical variables were associated with heart disease.
-This approach evaluates whether variables such as chest pain type or exercise-induced angina are statistically related to disease status.
-The hypothesis tested was:
-	H₀ (Null hypothesis):
-There is no association between the categorical variable and heart disease status.
-	H₁ (Alternative hypothesis):
-The categorical variable is associated with heart disease status.
 
-Significance level: α=0.05
+## Chi-Square Test (Categorical Variables)
+
+Chi-square tests were applied to determine whether categorical variables were associated with heart disease.
+
+This approach evaluates whether variables such as chest pain type or exercise-induced angina are statistically related to disease status.
+
+### Hypothesis:
+
+- **H₀ (Null hypothesis):** There is no association between the categorical variable and heart disease status.
+- **H₁ (Alternative hypothesis):** The categorical variable is associated with heart disease status.
+
+### Significance level:
+- α = 0.05
+
 
 Table 2- P-value of each categorical variable associated with heart disease in the dataset
 <img width="975" height="299" alt="image" src="https://github.com/user-attachments/assets/fdde56a4-9d96-4f4c-bcc1-28a5698ce584" />
@@ -177,8 +207,8 @@ The p-values of the variables presented in Table 2 are less than 0.05, indicatin
 Feature Scaling
 Standardisation was applied for Logistic Regression.
 The transformation ensured:
-•	Mean = 0
-•	Standard deviation = 1
+-	Mean = 0
+-	Standard deviation = 1
 Scaling was applied because Logistic Regression is sensitive to feature magnitude.
 Random Forest was trained using the original feature values because tree-based algorithms do not require scaling.
 
@@ -187,16 +217,16 @@ Random Forest was trained using the original feature values because tree-based a
 
 ### 9.1 Logistic Regression
 Logistic Regression was selected because it provides:
-•	Interpretability
-•	Probability-based predictions
-•	Clinical transparency
+-	Interpretability
+-	Probability-based predictions
+-	Clinical transparency
 This is valuable in healthcare where understanding decision factors is important.
 ________________________________________
 ### 9.2 Random Forest
 Random Forest was selected because it:
-•	Captures non-linear patterns
-•	Models interactions between variables
-•	Provides feature importance ranking
+-	Captures non-linear patterns
+-	Models interactions between variables
+-	Provides feature importance ranking
 
 
 # 10. Model Evaluation Results
@@ -269,12 +299,18 @@ Rank	Feature	Importance
 The results indicate that clinical indicators related to cardiac symptoms, exercise response, and physiological measurements contributed strongly to prediction.
 
 
+<img width="1009" height="549" alt="image" src="https://github.com/user-attachments/assets/6765c11c-246c-4cf5-893a-81a0d577053a" />
+Figure.5-Feature importance captured by Random Forest
+
+It is clear from Fig.5 that Chest pain type (cp) was one of the most influential predictors. The model learned that different chest pain patterns are associated with different probabilities of heart disease.
+
+
 # 15. Clinical Interpretation
 The developed machine learning models demonstrate the potential of artificial intelligence for cardiovascular risk prediction.
 Key findings:
-•	Logistic Regression provided strong predictive performance with high interpretability.
-•	Random Forest provided strong generalisation capability through cross-validation.
-•	Clinical variables related to chest pain, heart rate response, and exercise-related measurements were important predictors.
+-	Logistic Regression provided strong predictive performance with high interpretability.
+-	Random Forest provided strong generalisation capability through cross-validation.
+-	Clinical variables related to chest pain, heart rate response, and exercise-related measurements were important predictors.
 These models could potentially support clinicians by providing additional risk information during patient assessment.
 However, machine learning predictions should be considered decision-support tools rather than replacements for clinical judgement.
 ________________________________________
@@ -284,18 +320,18 @@ Several limitations should be considered:
 2.	The study requires external validation using independent clinical populations.
 3.	Dataset characteristics may not represent all demographic groups.
 4.	Before clinical deployment, additional evaluation is required, including:
-o	Model calibration
-o	Bias assessment
-o	Prospective validation
+    -	Model calibration
+    -	Bias assessment
+    -	Prospective validation
 ________________________________________
 # 17. Conclusion
 This project demonstrates a complete medical data science workflow for heart disease prediction.
 The analysis successfully integrated:
-•	Healthcare data cleaning
-•	Statistical investigation
-•	Machine learning modelling
-•	Model validation
-•	Explainability analysis
+-	Healthcare data cleaning
+-	Statistical investigation
+-	Machine learning modelling
+-	Model validation
+-	Explainability analysis
 Both Logistic Regression and Random Forest demonstrated the ability to predict heart disease from patient clinical information.
 Future work should focus on external clinical validation, explainable AI methods, and integration into clinical decision-support systems.
 
