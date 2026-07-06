@@ -36,10 +36,10 @@ plt.show()
 
 # Load Raster Layers
 
-temperature = rasterio.open(r"C:\Users\Eshgh\Desktop\My Business\Data Science\Practical projects\3\wc2.1_10m_tavg\wc2.1_10m_tavg_01.tif")
-rainfall = rasterio.open(r"C:\Users\Eshgh\Desktop\My Business\Data Science\Practical projects\3\wc2.1_10m_prec\wc2.1_10m_prec_01.tif")
-vegetation = rasterio.open(r"C:\Users\Eshgh\Desktop\My Business\Data Science\Practical projects\3\geom.png")
-elevation = rasterio.open(r"C:\Users\Eshgh\Desktop\My Business\Data Science\Practical projects\3\2072469.tif")
+temperature = rasterio.open("\wc2.1_10m_tavg\wc2.1_10m_tavg_01.tif")
+rainfall = rasterio.open("\wc2.1_10m_prec\wc2.1_10m_prec_01.tif")
+vegetation = rasterio.open("\geom.tif")
+elevation = rasterio.open("2072469.tif")
 
 # Read raster values
 
@@ -81,19 +81,11 @@ y = y[mask]
 
 #Train/Test Split
 
-X_train,X_test,y_train,y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42
-)
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
 
 
 # Train Random Forest
-model = RandomForestClassifier(
-    n_estimators=200,
-    random_state=42
-)
+model = RandomForestClassifier(n_estimators=200,random_state=42)
 
 model.fit(X_train,y_train)
 
@@ -105,16 +97,9 @@ print(classification_report(y_test,pred))
 
 #Feature Importance
 
-importance = pd.DataFrame({
-    "Feature":X.columns,
-    "Importance":model.feature_importances_
-})
+importance = pd.DataFrame({"Feature":X.columns,"Importance":model.feature_importances_})
 
-importance.sort_values(
-    by="Importance",
-    ascending=False,
-    inplace=True
-)
+importance.sort_values(by="Importance",ascending=False,inplace=True)
 
 print(importance)
 
@@ -161,19 +146,11 @@ with rasterio.open(
 
 import folium
 
-m = folium.Map(
-    location=[-25,133],
-    zoom_start=4
-)
+m = folium.Map(location=[-25,133],zoom_start=4)
 
 for idx,row in fire.iterrows():
 
-    folium.CircleMarker(
-        location=[row.geometry.y,row.geometry.x],
-        radius=3,
-        color="red",
-        fill=True
-    ).add_to(m)
+    folium.CircleMarker(location=[row.geometry.y,row.geometry.x],radius=3,color="red",fill=True).add_to(m)
 
 m.save("outputs/fire_map.html")
 
