@@ -73,7 +73,10 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 ![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
 
-*Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
+<p align="center">) *Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
+
+
+
 
 
 ---
