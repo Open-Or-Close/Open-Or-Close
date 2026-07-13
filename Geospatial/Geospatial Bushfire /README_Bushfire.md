@@ -96,3 +96,18 @@ Upon script completion, your file system generates the following project artifac
 3. An interactive web portal to let stakeholders simulate how rising temperatures impact fire hazard boundaries in real time.
 
 
+
+# Outcome:
+
+<img width="1484" height="869" alt="image" src="https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a" />
+Fig.1- When th etemperature is 26 degree (C)
+
+
+
+
+
+<img width="1446" height="864" alt="image" src="https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3" />
+
+Fig.2- When th etemperature is 42 degree (C)
+
+
