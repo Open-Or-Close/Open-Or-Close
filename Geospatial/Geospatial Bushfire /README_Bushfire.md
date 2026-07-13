@@ -58,6 +58,24 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 *   **Left Control Panel (Diagnostics & Simulations):** Computes and charts feature importance calculations, putting the exact driving risks in plain sight. It features a live `Streamlit Slider` letting operators filter microclimates by temperature.
 *   **Right Display Canvas (Interactive Leaflet Map):** Renders a zoomable, map layer tracking point features. Safe zones are drawn as green nodes, and zones flagged as high susceptibility by the Machine Learning model appear as red hazard nodes. Clicking any location node reveals an interactive data sheet detailing its temperature, slope, and proximity to infrastructure.
 
+
+# Outcome
+
+### Fig. 1 – When the temperature is **26°C**
+
+![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
+
+*Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
+
+---
+
+### Fig. 2 – When the temperature is **42°C**
+
+![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
+
+*Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
+
+
 ---
 
 ## 🚀 Execution & Replication Instructions
@@ -97,20 +115,5 @@ Upon script completion, your file system generates the following project artifac
 
 
 
-# Outcome
-
-### Fig. 1 – When the temperature is **26°C**
-
-![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
-
-*Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
-
----
-
-### Fig. 2 – When the temperature is **42°C**
-
-![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
-
-*Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
 
 
