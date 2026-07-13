@@ -61,15 +61,15 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 # Outcome
 
-### Fig. 1 – When the temperature is **26°C**
+### When the temperature is **26°C**
 
 ![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
 
 *Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
 
----
 
-### Fig. 2 – When the temperature is **42°C**
+
+###  When the temperature is **42°C**
 
 ![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
 
