@@ -8,7 +8,7 @@ Predicting wildland fires requires a complex intersection of dynamic climate con
 *   **True Spatial Feature Engineering:** Demonstrates actual vector-to-raster style proximity operations by calculating spatial interaction matrices relative to critical utility networks.
 *   **Stakeholder Transparency:** Translates opaque ensemble model weights into clear feature importances, accompanied by a dynamic spatial application allowing stakeholders to visually simulate "what-if" risk scenarios.
 
----
+
 
 ## 🛠️ System Architecture & Tech Stack
 The project is built on modular, open-source principles separating data processing from presentation layout:
@@ -17,7 +17,7 @@ The project is built on modular, open-source principles separating data processi
 *   **Serialization Management:** `Joblib`
 *   **Visualization & UI Frame:** `Streamlit`, `Folium` (Leaflet wrapper), `Streamlit-Folium`
 
----
+
 
 ## 📈 Step-by-Step Implementation Breakdown
 
@@ -65,7 +65,7 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 ![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
 
-*Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
+<p align="center"> *Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
 
 
 
@@ -73,7 +73,7 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 ![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
 
-<p align="center">) *Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
+<p align="center"> *Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
 
 
 
