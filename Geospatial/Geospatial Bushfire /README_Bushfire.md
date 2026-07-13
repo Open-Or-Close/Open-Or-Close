@@ -97,17 +97,20 @@ Upon script completion, your file system generates the following project artifac
 
 
 
-# Outcome:
+# Outcome
 
-<img width="1484" height="869" alt="image" src="https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a" />
-Fig.1- When th etemperature is 26 degree (C)
+### Fig. 1 – When the temperature is **26°C**
 
+![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
 
+*Figure 1. Predicted bushfire risk when the temperature is **26°C**.*
 
+---
 
+### Fig. 2 – When the temperature is **42°C**
 
-<img width="1446" height="864" alt="image" src="https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3" />
+![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
 
-Fig.2- When th etemperature is 42 degree (C)
+*Figure 2. Predicted bushfire risk when the temperature is **42°C**.*
 
 
