@@ -1,5 +1,5 @@
-### Author: Reza Mohseni   
-### Contact: Reza2013mohseni@gmail.com
+#### Author: Reza Mohseni   
+#### Contact: Reza2013mohseni@gmail.com
 
 # 🗺️ End-to-End Geospatial Bushfire Analytics & Machine Learning Pipeline
 
