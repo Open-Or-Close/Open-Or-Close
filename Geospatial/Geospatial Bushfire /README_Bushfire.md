@@ -1,7 +1,8 @@
-# 🗺️ End-to-End Geospatial Bushfire Analytics & Machine Learning Pipeline
-
 ### Author: Reza Mohseni   
 ### Contact: Reza2013mohseni@gmail.com
+
+# 🗺️ End-to-End Geospatial Bushfire Analytics & Machine Learning Pipeline
+
 
 ## 📌 Project Overview & Value Proposition
 Predicting wildland fires requires a complex intersection of dynamic climate conditions, topographics, and spatial human infrastructure vectors. This project delivers a complete, production-ready Geospatial Data Science pipeline that simulates geographical risk environments, engineers localized spatial infrastructure interactions, trains an ensemble Machine Learning model, and deploys an interactive decision-support GIS dashboard.
