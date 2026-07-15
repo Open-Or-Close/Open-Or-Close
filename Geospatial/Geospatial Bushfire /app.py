@@ -15,12 +15,11 @@ st.markdown(
 # Load data and model
 @st.cache_data
 def load_spatial_data():
-    return gpd.read_file("processed_spatial_data.geojson")
-
+    return gpd.read_file("./processed_spatial_data.geojson") # Added ./
 
 try:
     gdf = load_spatial_data()
-    model = joblib.load('bushfire_model.pkl')
+    model = joblib.load('./bushfire_model.pkl') # Added ./
 except FileNotFoundError:
     st.error("Please run `python spatial_pipeline.py` first to generate the datasets and model models!")
     st.stop()
