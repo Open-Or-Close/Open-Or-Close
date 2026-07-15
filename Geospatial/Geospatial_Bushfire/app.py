@@ -13,35 +13,33 @@ st.markdown(
     "This dashboard showcases machine learning predictions mapped directly onto interactive GIS layers without any data downloading friction.")
 
 
-# 1. Get the directory that app.py lives in dynamically
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
+model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
+pipeline_path = os.path.join(BASE_DIR, "spatial_pipeline.py")
 
-# 🔍 DIAGNOSTIC: Print exactly what files are in this folder to the logs
-st.write("### Folder Diagnostics")
-try:
-    folder_contents = os.listdir(BASE_DIR)
-    st.write(f"Files found in app directory: {folder_contents}")
-    print(f"--- SERVER LOG FILES FOUND: {folder_contents} ---")
-except Exception as e:
-    st.write(f"Could not read directory: {e}")
+# 🚀 AUTOMATION: If the files don't exist, run the pipeline script to create them!
+if not os.path.exists(data_path) or not os.path.exists(model_path):
+    st.info("Generating spatial data and model files from pipeline... Please wait.")
+    try:
+        # This executes your spatial_pipeline.py script inside Streamlit Cloud
+        subprocess.run(["python", pipeline_path], check=True, cwd=BASE_DIR)
+        st.success("Pipeline executed successfully! Files created.")
+    except Exception as e:
+        st.error(f"Failed to run spatial_pipeline.py: {e}")
+        st.stop()
 
 @st.cache_data
 def load_spatial_data():
-    data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
-    
-    # Check if the file actually exists before giving it to geopandas
-    if not os.path.exists(data_path):
-        raise FileNotFoundError(f"Missing file! Checked path: {data_path}")
-        
     return gpd.read_file(data_path)
 
 try:
     gdf = load_spatial_data()
-    model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
     model = joblib.load(model_path)
+    st.success("All data loaded! Rendering app...")
 except Exception as e:
-    st.error(f"Error loading files: {e}")
-    st.stop() # Stops the app here so we can read the message safely
+    st.error(f"Error loading generated files: {e}")
+    st.stop()
 
 
 
