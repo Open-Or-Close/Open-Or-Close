@@ -19,15 +19,26 @@ data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
 model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
 pipeline_path = os.path.join(BASE_DIR, "spatial_pipeline.py")
 
-# 🚀 AUTOMATION: If the files don't exist, run the pipeline script to create them!
 if not os.path.exists(data_path) or not os.path.exists(model_path):
     st.info("Generating spatial data and model files from pipeline... Please wait.")
     try:
-        # This executes your spatial_pipeline.py script inside Streamlit Cloud
-        subprocess.run(["python", pipeline_path], check=True, cwd=BASE_DIR)
+        # 🔍 CAPTURE ERROR OUTPUT: Added capture_output=True to read the crash logs
+        result = subprocess.run(
+            ["python", pipeline_path], 
+            capture_output=True, 
+            text=True, 
+            cwd=BASE_DIR
+        )
+        
+        if result.returncode != 0:
+            # Display the exact python error inside spatial_pipeline.py
+            st.error("### ❌ Pipeline Script Crashed!")
+            st.code(result.stderr)
+            st.stop()
+            
         st.success("Pipeline executed successfully! Files created.")
     except Exception as e:
-        st.error(f"Failed to run spatial_pipeline.py: {e}")
+        st.error(f"Failed to execute subprocess wrapper: {e}")
         st.stop()
 
 @st.cache_data
