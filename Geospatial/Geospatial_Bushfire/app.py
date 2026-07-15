@@ -4,6 +4,7 @@ import pandas as pd
 import joblib
 import folium
 from streamlit_folium import st_folium
+import os
 
 st.set_page_config(layout="wide", page_title="Spatial Bushfire Analytics")
 
@@ -12,16 +13,23 @@ st.markdown(
     "This dashboard showcases machine learning predictions mapped directly onto interactive GIS layers without any data downloading friction.")
 
 
-# Load data and model
+# Get the directory that app.py lives in dynamically
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 @st.cache_data
 def load_spatial_data():
-    # Update this line with the full relative path from the root
-    return gpd.read_file("Geospatial/Geospatial_Bushfire/processed_spatial_data.geojson") 
+    # Safely join the path to your data file
+    data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
+    return gpd.read_file(data_path)
 
 try:
     gdf = load_spatial_data()
-    # Update this line as well
-    model = joblib.load('Geospatial/Geospatial_Bushfire/bushfire_model.pkl') 
+    
+    # Safely join the path to your model file
+    model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
+    model = joblib.load(model_path)
+
+
 except FileNotFoundError:
     st.error("Please run `python spatial_pipeline.py` first to generate the datasets and model models!")
     st.stop()
