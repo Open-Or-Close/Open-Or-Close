@@ -1,10 +1,7 @@
+streamlit
+geopandas
+pyogrio
 numpy
 pandas
-geopandas
-shapely
 scikit-learn
-matplotlib
-seaborn
-streamlit
-folium
-streamlit-folium
+joblib
