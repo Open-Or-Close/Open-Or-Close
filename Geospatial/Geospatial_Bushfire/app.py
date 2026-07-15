@@ -13,26 +13,37 @@ st.markdown(
     "This dashboard showcases machine learning predictions mapped directly onto interactive GIS layers without any data downloading friction.")
 
 
-# Get the directory that app.py lives in dynamically
+# 1. Get the directory that app.py lives in dynamically
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 🔍 DIAGNOSTIC: Print exactly what files are in this folder to the logs
+st.write("### Folder Diagnostics")
+try:
+    folder_contents = os.listdir(BASE_DIR)
+    st.write(f"Files found in app directory: {folder_contents}")
+    print(f"--- SERVER LOG FILES FOUND: {folder_contents} ---")
+except Exception as e:
+    st.write(f"Could not read directory: {e}")
 
 @st.cache_data
 def load_spatial_data():
-    # Safely join the path to your data file
     data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
+    
+    # Check if the file actually exists before giving it to geopandas
+    if not os.path.exists(data_path):
+        raise FileNotFoundError(f"Missing file! Checked path: {data_path}")
+        
     return gpd.read_file(data_path)
 
 try:
     gdf = load_spatial_data()
-    
-    # Safely join the path to your model file
     model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
     model = joblib.load(model_path)
+except Exception as e:
+    st.error(f"Error loading files: {e}")
+    st.stop() # Stops the app here so we can read the message safely
 
 
-except FileNotFoundError:
-    st.error("Please run `python spatial_pipeline.py` first to generate the datasets and model models!")
-    st.stop()
 
 # Layout
 col1, col2 = st.columns([1, 2])
