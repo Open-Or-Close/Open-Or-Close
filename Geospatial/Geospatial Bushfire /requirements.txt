@@ -1,4 +1,3 @@
---use-deprecated=legacy-resolver
 numpy
 pandas
 geopandas
