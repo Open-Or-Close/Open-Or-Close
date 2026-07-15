@@ -80,7 +80,7 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 <p align="center"> Figure 2. Predicted bushfire risk when the temperature is 42°C.
 
 
-
+---
 
 # Geospatial Bushfire Risk Analyzer 🌲🔥
 
