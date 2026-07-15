@@ -14,32 +14,46 @@ st.markdown(
     "This dashboard showcases machine learning predictions mapped directly onto interactive GIS layers without any data downloading friction.")
 
 
+import os
+import subprocess
+import sys
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(BASE_DIR, "processed_spatial_data.geojson")
 model_path = os.path.join(BASE_DIR, "bushfire_model.pkl")
 pipeline_path = os.path.join(BASE_DIR, "spatial_pipeline.py")
 
+import streamlit as st
+
 if not os.path.exists(data_path) or not os.path.exists(model_path):
-    st.info("Generating spatial data and model files from pipeline... Please wait.")
+    st.info("Preparing system and generating spatial data... Please wait.")
     try:
-        # 🔍 CAPTURE ERROR OUTPUT: Added capture_output=True to read the crash logs
+        # 🚀 FORCE INSTALL: Installs numpy and scikit-learn directly to the active system path
+        st.write("Installing pipeline dependencies...")
+        subprocess.run([sys.executable, "-m", "pip", "install", "numpy", "pandas", "scikit-learn", "geopandas", "pyogrio", "joblib"], check=True)
+        
+        # Now run the pipeline script using the exact same python executable
+        st.write("Running spatial_pipeline.py...")
         result = subprocess.run(
-            ["python", pipeline_path], 
+            [sys.executable, pipeline_path], 
             capture_output=True, 
             text=True, 
             cwd=BASE_DIR
         )
         
         if result.returncode != 0:
-            # Display the exact python error inside spatial_pipeline.py
             st.error("### ❌ Pipeline Script Crashed!")
             st.code(result.stderr)
             st.stop()
             
         st.success("Pipeline executed successfully! Files created.")
     except Exception as e:
-        st.error(f"Failed to execute subprocess wrapper: {e}")
+        st.error(f"Failed during environment preparation: {e}")
         st.stop()
+
+# Now load the frameworks after ensuring environment preparation is complete
+import geopandas as gpd
+import joblib
 
 @st.cache_data
 def load_spatial_data():
@@ -52,7 +66,6 @@ try:
 except Exception as e:
     st.error(f"Error loading generated files: {e}")
     st.stop()
-
 
 
 # Layout
