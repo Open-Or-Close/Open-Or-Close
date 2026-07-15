@@ -82,6 +82,17 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 
 
+# Geospatial Bushfire Risk Analyzer 🌲🔥
+
+[![Streamlit App](https://open-or-close-duazna7xn8daqhfjghkkbn.streamlit.app/)
+
+An interactive geospatial dashboard and machine learning pipeline built to predict, analyze, and visualize localized bushfire risks. 
+
+### 🚀 Live Demo
+You can explore the interactive mapping tool directly in your web browser:
+👉 **[Launch the Interactive Map](https://open-or-close-duazna7xn8daqhfjghkkbn.streamlit.app/)**
+
+
 
 
 
