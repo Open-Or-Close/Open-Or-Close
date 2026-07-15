@@ -56,7 +56,7 @@ def generate_synthetic_spatial_data(n_samples=2000):
             (ndvi * 10)
     )
     # Normalize and convert to binary target (1 = Fire, 0 = No Fire)
-    prob = 1 / (1 + np.exp(0.1 * (risk_score - np.median(risk_score))))
+    prob = 1 / (1 + np.exp(-0.1 * (risk_score - np.median(risk_score))))
     gdf['fire_occurred'] = np.where(prob > 0.65, 1, 0)
 
     return gdf
