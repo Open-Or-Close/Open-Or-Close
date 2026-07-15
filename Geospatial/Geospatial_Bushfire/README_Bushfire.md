@@ -96,6 +96,9 @@ You can explore the interactive mapping tool directly in your web browser:
 
 
 
+
+---
+
 ## 🚀 Execution & Replication Instructions
 
 To run this full infrastructure pipeline locally, execute the following commands within your terminal or PyCharm command terminal:
