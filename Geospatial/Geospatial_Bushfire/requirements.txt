@@ -5,3 +5,7 @@ numpy
 pandas
 scikit-learn
 joblib
+folium
+streamlit-folium
+matplotlib
+seaborn
