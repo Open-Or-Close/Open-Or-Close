@@ -4,6 +4,7 @@ import subprocess
 import pandas as pd
 import joblib
 import folium
+from folium.plugins import MarkerCluster  
 from streamlit_folium import st_folium
 import os
 
