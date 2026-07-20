@@ -55,9 +55,26 @@ def generate_synthetic_spatial_data(n_samples=2000):
             (gdf['dist_to_powerline_m'] / 5000) -
             (ndvi * 10)
     )
-    # Normalize and convert to binary target (1 = Fire, 0 = No Fire)
-    prob = 1 / (1 + np.exp(-0.1 * (risk_score - 40)))
+
+
+    
+    # Generate Target Variable (Bushfire Occurrence Probability)
+    risk_score = (
+            (temp * 0.4) +
+            (wind_speed * 0.3) +
+            (slope * 0.2) -
+            (gdf['dist_to_powerline_m'] / 5000) -
+            (ndvi * 10)
+    )
+    
+    # Calculate a STATIC baseline median from this specific data pool
+    # This guarantees a balanced dataset for training, but stays fixed during simulation.
+    static_baseline = float(np.median(risk_score))
+    
+    # Use the static baseline instead of a moving median function
+    prob = 1 / (1 + np.exp(-0.1 * (risk_score - static_baseline)))
     gdf['fire_occurred'] = np.where(prob > 0.50, 1, 0)
+
 
     return gdf
 
