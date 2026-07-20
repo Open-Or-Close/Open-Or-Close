@@ -90,7 +90,7 @@ An interactive geospatial dashboard and machine learning pipeline built to predi
 
 ### 🚀 Live Demo
 You can explore the interactive mapping tool directly in your web browser:
-👉 **[Launch the Interactive Map](https://open-or-close-duazna7xn8daqhfjghkkbn.streamlit.app/)**
+👉 **[Launch the Interactive Map](https://open-or-close-reza.streamlit.app/)**
 
 
 
