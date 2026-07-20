@@ -164,4 +164,4 @@ with col2:
         </div>
     </div>
     """
-    st.markdown(legend_html, unsafe_html=True)
+    st.markdown(legend_html, unsafe_allow_html=True)
