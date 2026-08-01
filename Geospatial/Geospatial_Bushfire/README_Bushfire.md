@@ -65,19 +65,31 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 # Outcome
 
-### When Simulate Climate Temperature Offset (°C) is Zero
+<h3>When Simulate Climate Temperature Offset (°C) is Zero</h3>
 
-![Temperature Offset (°C) is Zero](<img width="1797" height="996" alt="image" src="https://github.com/user-attachments/assets/785bbd27-ab7c-46f8-b3a3-800def647e77" />)
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/785bbd27-ab7c-46f8-b3a3-800def647e77"
+    width="900"
+    alt="Predicted bushfire risk when temperature offset is 0°C">
+</p>
 
-<p align="center">  Figure 1. Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is Zero
+<p align="center">
+<b>Figure 1.</b> Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is Zero.
+</p>
 
+<h3>When Simulate Climate Temperature Offset (°C) is 9</h3>
 
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/a68444db-8b45-4498-8da1-0b93b002dc4e"
+    width="900"
+    alt="Predicted bushfire risk when temperature offset is 9°C">
+</p>
 
-###  When Simulate Climate Temperature Offset (°C) is 9
-
-![Temperature Offset (°C) is 9](<img width="1842" height="966" alt="image" src="https://github.com/user-attachments/assets/a68444db-8b45-4498-8da1-0b93b002dc4e" />)
-
-<p align="center"> Figure 2. Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is 9
+<p align="center">
+<b>Figure 2.</b> Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is 9.
+</p>
 
 
 ---
