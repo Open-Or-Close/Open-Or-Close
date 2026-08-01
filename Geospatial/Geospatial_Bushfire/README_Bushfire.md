@@ -65,12 +65,13 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 # Outcome
 
+### 1) 
 <h3>When Simulate Climate Temperature Offset (°C) is Zero</h3>
 
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/785bbd27-ab7c-46f8-b3a3-800def647e77"
-    width="1000"
+    width="1200"
     alt="Predicted bushfire risk when temperature offset is 0°C">
 </p>
 
@@ -78,12 +79,14 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 <b>Figure 1.</b> Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is Zero.
 </p>
 
+### 2)
+
 <h3>When Simulate Climate Temperature Offset (°C) is 9</h3>
 
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/a68444db-8b45-4498-8da1-0b93b002dc4e"
-    width="1000"
+    width="1200"
     alt="Predicted bushfire risk when temperature offset is 9°C">
 </p>
 
