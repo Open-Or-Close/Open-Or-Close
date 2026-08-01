@@ -65,19 +65,19 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 
 # Outcome
 
-### When the temperature is **26°C**
+### When Simulate Climate Temperature Offset (°C) is Zero
 
-![Temperature 26°C](https://github.com/user-attachments/assets/2d80c8fb-ab8a-49e7-a4ac-bd13b52e833a)
+![Temperature 26°C](<img width="1797" height="996" alt="image" src="https://github.com/user-attachments/assets/785bbd27-ab7c-46f8-b3a3-800def647e77" />)
 
-<p align="center">  Figure 1. Predicted bushfire risk when the temperature is 26°C.
+<p align="center">  Figure 1. Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is Zero
 
 
 
 ###  When the temperature is **42°C**
 
-![Temperature 42°C](https://github.com/user-attachments/assets/e73ca54b-7543-4883-b876-45c9706d5bb3)
+![Temperature 42°C](<img width="1842" height="966" alt="image" src="https://github.com/user-attachments/assets/a68444db-8b45-4498-8da1-0b93b002dc4e" />)
 
-<p align="center"> Figure 2. Predicted bushfire risk when the temperature is 42°C.
+<p align="center"> Figure 2. Predicted bushfire risk when Simulate Climate Temperature Offset (°C) is 9
 
 
 ---
