@@ -108,7 +108,7 @@ You can explore the interactive mapping tool directly in your web browser:
 👉 **[Launch the Interactive Map](https://open-or-close-reza.streamlit.app/)**
 
 
-
+**Note:** If you face any issue with running the interactive app, please contact via Reza2013mohseni@gmail.com
 
 
 
