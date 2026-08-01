@@ -70,7 +70,7 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/785bbd27-ab7c-46f8-b3a3-800def647e77"
-    width="900"
+    width="1000"
     alt="Predicted bushfire risk when temperature offset is 0°C">
 </p>
 
@@ -83,7 +83,7 @@ The `app.py` script provisions a highly visual browser application via **Streaml
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/a68444db-8b45-4498-8da1-0b93b002dc4e"
-    width="900"
+    width="1000"
     alt="Predicted bushfire risk when temperature offset is 9°C">
 </p>
 
